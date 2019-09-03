@@ -6,7 +6,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
+<!--		<version>2.1.7.RELEASE</version>-->
+		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -17,6 +18,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<!-- Maven repository configuration -->
+<!--		<maven.repo.url.prefix>https://nexus.tools.xoom.com/nexus</maven.repo.url.prefix>-->
+<!--		<maven.repo.download.url>${maven.repo.url.prefix}/content/groups/public</maven.repo.download.url>-->
 	</properties>
 
 	<dependencies>
@@ -48,5 +52,39 @@
 			</plugin>
 		</plugins>
 	</build>
+
+<!--	<repositories>-->
+<!--		&lt;!&ndash; Xoom Engineering's sole Maven repository server &ndash;&gt;-->
+<!--		<repository>-->
+<!--			<id>public-snapshots</id>-->
+<!--			<name>Public Snapshots Repository</name>-->
+<!--			<url>${maven.repo.download.url}-snapshots</url>-->
+<!--			<snapshots>-->
+<!--				<enabled>true</enabled>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
+
+<!--		<repository>-->
+<!--			<id>public</id>-->
+<!--			<name>Public Repositories</name>-->
+<!--			<url>${maven.repo.download.url}</url>-->
+<!--			<releases>-->
+<!--				<enabled>true</enabled>-->
+<!--				<updatePolicy>never</updatePolicy>-->
+<!--				<checksumPolicy>fail</checksumPolicy>-->
+<!--			</releases>-->
+<!--			<snapshots>-->
+<!--				<enabled>false</enabled>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
+<!--	<pluginRepositories>-->
+<!--		&lt;!&ndash; Same server as above &ndash;&gt;-->
+<!--		<pluginRepository>-->
+<!--			<id>public</id>-->
+<!--			<url>${maven.repo.download.url}</url>-->
+<!--		</pluginRepository>-->
+<!--	</pluginRepositories>-->
 
 </project>

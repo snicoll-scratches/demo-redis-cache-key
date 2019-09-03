@@ -3,18 +3,21 @@ package com.example.demo;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-/**
- * @author Stephane Nicoll
- */
-public class Something {
+public class SomethingTwo {
     private final String name;
+    private final String hash;
 
-    public Something(String name) {
+    public SomethingTwo(String name, String hash) {
         this.name = name;
+        this.hash = hash;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public String getHash() {
+        return this.hash;
     }
 
     @Override
@@ -25,19 +28,20 @@ public class Something {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-        Something something = (Something) o;
-        return Objects.equals(name, something.name);
+        SomethingTwo something = (SomethingTwo) o;
+        return Objects.equals(name, something.name) && Objects.equals(hash, something.hash);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, hash);
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
                 .add("name = " + name)
+                .add("hash = " + hash)
                 .toString();
     }
 }
