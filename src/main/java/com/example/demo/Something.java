@@ -10,12 +10,19 @@ public class Something {
 
 	private final String name;
 
-	public Something(String name) {
+	private final String test;
+
+	public Something(String name, String test) {
 		this.name = name;
+		this.test = test;
 	}
 
 	public String getName() {
 		return this.name;
+	}
+
+	public String getTest() {
+		return this.test;
 	}
 
 	@Override
@@ -23,12 +30,12 @@ public class Something {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Something something = (Something) o;
-		return name.equals(something.name);
+		return Objects.equals(name, something.name) &&
+				Objects.equals(test, something.test);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(name);
+		return Objects.hash(name, test);
 	}
-	
 }

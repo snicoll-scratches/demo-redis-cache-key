@@ -22,4 +22,11 @@ public class SomeService {
 		return result;
 	}
 
+	@Cacheable(keyGenerator = "customKeyGenerator")
+	public String findSomething2(List<Something> somethings) {
+		String result = somethings.stream().map(Something::getName).collect(Collectors.joining(", "));
+		System.out.println("Called and generated " + result);
+		return result;
+	}
+
 }
